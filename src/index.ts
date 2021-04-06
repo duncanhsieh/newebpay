@@ -31,14 +31,18 @@ export class TradeModules {
     hashIV: string,
     payGateWay: string,
     clientBackURL: string,
+    ReturnURL?: string,
+    NotifyURL?: string,
   ) {
     this.URL = url;
     this.MerchantID = merchantId;
     this.HashKey = hashKey;
     this.HashIV = hashIV;
     this.PayGateWay = payGateWay;
-    this.ReturnURL = this.URL + '/spgateway/callback?from=ReturnURL';
-    this.NotifyURL = this.URL + '/spgateway/callback?from=NotifyURL';
+    this.ReturnURL =
+      ReturnURL || this.URL + '/spgateway/callback?from=ReturnURL';
+    this.NotifyURL =
+      NotifyURL || this.URL + '/spgateway/callback?from=NotifyURL';
     this.ClientBackURL = clientBackURL || 'http://localhost:8080/orders';
   }
 
@@ -75,13 +79,21 @@ export class TradeModules {
       .toUpperCase();
   }
 
-  public getTradeInfo(Amt: number, Desc: string, email: string): any {
+  public getTradeInfo(
+    Amt: number,
+    Desc: string,
+    email: string,
+    comment?: string,
+  ): any {
     const emailRule = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
 
     if (Amt < 0)
       return { status: 'error', message: `Input Amt type ${Amt} Error` };
     if (Desc.length < 1)
-      return { status: 'error', message: `Input Desc Length ${Desc} Error` };
+      return {
+        status: 'error',
+        message: `Input Desc Length ${Desc} Error`,
+      };
     if (email.search(emailRule) !== -1) {
       const data = {
         MerchantID: this.MerchantID,
@@ -90,7 +102,7 @@ export class TradeModules {
         Version: 1.5,
         MerchantOrderNo: Date.now(),
         LoginType: 0,
-        OrderComment: 'OrderComment',
+        OrderComment: comment || 'OrderComment',
         Amt: Amt,
         ItemDesc: Desc,
         Email: email,
@@ -110,7 +122,10 @@ export class TradeModules {
       };
       return tradeInfo;
     } else {
-      return { status: 'error', message: `Input Email content ${email} Error` };
+      return {
+        status: 'error',
+        message: `Input Email content ${email} Error`,
+      };
     }
   }
 }

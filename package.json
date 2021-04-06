@@ -1,6 +1,6 @@
 {
   "name": "newebpay",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Module for Newebpay",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -18,12 +18,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:libterty/newebpay.git"
+    "url": "git@github.com:duncanhsieh/newebpay.git"
   },
   "bugs": {
-    "url": "https://github.com/libterty/newebpay/issues"
+    "url": "https://github.com/duncanhsieh/newebpay/issues"
   },
-  "homepage": "https://github.com/libterty/newebpay",
+  "homepage": "https://github.com/duncanhsieh/newebpay",
   "dependencies": {
     "class-validator": "^0.11.0",
     "typescript": "^3.7.5"
@@ -43,7 +43,7 @@
     "tsconfig-paths": "^3.9.0"
   },
   "files": [
-    "lib/**/*"
+    "src/**/*"
   ],
   "jest": {
     "moduleFileExtensions": [
