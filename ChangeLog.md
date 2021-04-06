@@ -1,3 +1,13 @@
+## Version 0.0.11 (2021-04-06)
+
+## Updating Document
+
+- Update constractor and getTradeInfo
+
+## Version 0.0.9 (2019-02-15)
+
+## New features
+
 ## Version 0.0.10 (2019-02-15)
 
 ## Updating Document
@@ -56,14 +66,12 @@
 - Updating npm configuration[`9db4af7251f547840f0b3f1d1a9346ed2ab4ea41`](https://github.com/libterty/NewebPay/commit/9db4af7251f547840f0b3f1d1a9346ed2ab4ea41)
 - Updating package name[`a413c82ac500d456d8952f7f763d03991fb42737`](https://github.com/libterty/NewebPay/commit/a413c82ac500d456d8952f7f763d03991fb42737)
 
-
 ## Version 0.0.2 (2019-02-14)
 
 ### New features
 
 - Adding trading algo[`492da1221c961ccc19b2dfacc35a74a89db08eca`](https://github.com/libterty/NewebPay/commit/492da1221c961ccc19b2dfacc35a74a89db08eca)
 - Adding Url Check[`8e456b2d1b8bc53b9d6de4fd9f9bd7aa1381deb5`](https://github.com/libterty/NewebPay/commit/8e456b2d1b8bc53b9d6de4fd9f9bd7aa1381deb5)
-
 
 ## Version 0.0.1 (2019-02-14)
 
