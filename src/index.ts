@@ -84,6 +84,7 @@ export class TradeModules {
     Desc: string,
     email: string,
     comment?: string,
+    prefix?: string,
   ): any {
     const emailRule = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
 
@@ -100,7 +101,9 @@ export class TradeModules {
         RespondType: 'JSON',
         TimeStamp: Date.now(),
         Version: 1.5,
-        MerchantOrderNo: Date.now(),
+        MerchantOrderNo: prefix
+          ? `${prefix.replace('-', '_')}_${Math.round(Date.now() / 1000)}`
+          : Date.now(),
         LoginType: 0,
         OrderComment: comment || 'OrderComment',
         Amt: Amt,

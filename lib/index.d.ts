@@ -12,5 +12,5 @@ export declare class TradeModules {
     private createMpgAesEncrypt;
     createMpgAesDecrypt(TradeInfo: string): string;
     private createMpgShaEncrypt;
-    getTradeInfo(Amt: number, Desc: string, email: string, comment?: string): any;
+    getTradeInfo(Amt: number, Desc: string, email: string, comment?: string, prefix?: string): any;
 }
